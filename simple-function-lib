@@ -1,0 +1,35 @@
+const lib = () => {
+    const functions = {};
+    const t = (f, v) => {
+        if (functions[f.name]) {
+            functions[f.name].enable = v;
+        }
+    }
+
+    return {
+        functions,
+        add: f => {
+            functions[f.name] = {
+                enable: true,
+                func: f
+            }
+        },
+        disable: f => {
+            t(f, false)
+        },
+        enable: f => {
+            t(f, true)
+        },
+        fire: v => {
+            Object.keys(functions).map(k => {
+                let f = functions[k];
+
+                //console.log(k);
+
+                if (f.enable) {
+                    f.func.call(this, v);
+                }
+            });
+        }
+    };
+}
