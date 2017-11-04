@@ -1,0 +1,12 @@
+const f = n => {
+    let a = 1, b = 0, t;
+
+    while (n) {
+        t = a;
+        a = a + b;
+        b = t;
+        n--;
+    }
+
+    return b;
+}
