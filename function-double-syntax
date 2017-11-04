@@ -1,0 +1,9 @@
+// a(2,2)
+// a(2)(2)
+
+const a = (b, c) => {
+    if (c) {
+        return b * c;
+    }
+    return c => b * c;    
+}
