@@ -1,0 +1,14 @@
+let a = [3,7,1,2,6,9,4,8,5]; 
+
+const s = a => {
+    let r = [];
+    a.sort((a, b) => a >= b ? -1 : 1);
+    
+    while (a.length) {
+        r.push(a[0]);
+        a.splice(0,1);
+        a.reverse();
+    }
+
+    return r;
+}
