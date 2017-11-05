@@ -1,0 +1,11 @@
+class t {
+    constructor() {
+        this._name = 'Test';
+    }
+
+    getName() {
+        return this._name;
+    }
+};
+
+let f = new t();
