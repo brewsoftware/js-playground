@@ -1,0 +1,9 @@
+const tr = (e, cb) => {    
+    cb(e);
+    for (let i = 0; i < e.children.length; i++) {
+        let c = e.children[i];
+        tr(c, cb);
+    }
+}
+let fn = e => console.log(e);
+tr(document, fn);
